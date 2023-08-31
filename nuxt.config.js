@@ -1,58 +1,61 @@
 export default {
-  // Global page headers: https://go.nuxtjs.dev/config-head
-  head: {
-    title: "nuxt2test",
-    htmlAttrs: {
-      lang: "en",
-    },
-    meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" },
-      { name: "format-detection", content: "telephone=no" },
-    ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
-  },
-
-  // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
-
-  axios: {
-    baseURL: "https://api.quwi.com/v2/",
-  },
-
-  auth: {
-    strategies: {
-      local: {
-        endpoints: {
-          login: {
-            url: "auth/login",
-            method: "post",
-            propertyName: "token",
-          },
-          user: false,
-          logout: {
-            url: "auth/logout",
-            method: "post",
-            propertyName: "data.token",
-          },
+    // Global page headers: https://go.nuxtjs.dev/config-head
+    head: {
+        title: "nuxt2test",
+        htmlAttrs: {
+            lang: "en",
         },
-      },
+        meta: [
+            { charset: "utf-8" },
+            {
+                name: "viewport",
+                content: "width=device-width, initial-scale=1",
+            },
+            { hid: "description", name: "description", content: "" },
+            { name: "format-detection", content: "telephone=no" },
+        ],
+        link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     },
-  },
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ["@/plugins/modal"],
+    // Global CSS: https://go.nuxtjs.dev/config-css
+    css: ["@/assets/style/main.css"],
 
-  // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+    axios: {
+        baseURL: "https://api.quwi.com/v2/",
+    },
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [],
+    auth: {
+        strategies: {
+            local: {
+                endpoints: {
+                    login: {
+                        url: "auth/login",
+                        method: "post",
+                        propertyName: "token",
+                    },
+                    user: false,
+                    logout: {
+                        url: "auth/logout",
+                        method: "post",
+                        propertyName: "data.token",
+                    },
+                },
+            },
+        },
+    },
 
-  // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["@nuxtjs/axios", "@nuxtjs/auth"],
+    // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
+    plugins: ["@/plugins/modal"],
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+    // Auto import components: https://go.nuxtjs.dev/config-components
+    components: true,
+
+    // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
+    buildModules: [],
+
+    // Modules: https://go.nuxtjs.dev/config-modules
+    modules: ["@nuxtjs/axios", "@nuxtjs/auth"],
+
+    // Build Configuration: https://go.nuxtjs.dev/config-build
+    build: {},
 };

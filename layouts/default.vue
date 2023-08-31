@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <Navbar />
-    <Modals />
-    <nuxt />
-  </div>
+    <div class="main">
+        <Navbar />
+        <Modals />
+        <nuxt />
+    </div>
 </template>
